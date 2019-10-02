@@ -14,9 +14,7 @@ class App extends React.Component {
       followers: []
     };
 
-    // this.colorArr = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"]
   }
-
 
   componentDidMount() {
     axios.get("https://api.github.com/users/Jobsy").then(response => {

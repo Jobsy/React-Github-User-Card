@@ -49,7 +49,7 @@ class Users extends React.Component {
             <i class="users" />
             {this.props.usersProps.followers} followers
           </a> */}
-          <Link to="/articles">
+          <Link to="/followers" class="right floated">
             <i class="users" />
             {this.props.usersProps.followers} followers
           </Link>
