@@ -88,6 +88,16 @@ class App extends React.Component {
           </div>
         </div>
 
+
+        <div>
+          <h1>Followers</h1>
+          <ul>
+            {this.state.followers.map(follower => (
+              <li>{follower.login}</li>
+            ))}
+          </ul>
+        </div>
+
       </div>
     );
   }
