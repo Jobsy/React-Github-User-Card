@@ -35,18 +35,11 @@ class App extends React.Component {
       <div className="app">
         <div>
           <h1>GitHub User Card</h1>
-          <Users usersProps={this.state.users} />
+          <Route exact path="/" render={(props) => <Users {...props} usersProps={this.state.users} />} />
         </div>
-       
+
         <div>
-          <h1>Followers</h1>
-          <Followers followersProps={this.state.followers} />
-        </div>
-        <div>
-          {/* <BrowserRouter> 
-        <Route exact path="/followers" render={() => <Followers followersProps={this.state.followers} />} />
-          </BrowserRouter> */}
-          
+          <Route exact path="/followers" render={(props) => <Followers {...props} followersProps={this.state.followers} />} />
         </div>
       </div>
     );
