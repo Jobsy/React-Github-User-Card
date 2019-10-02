@@ -12,6 +12,8 @@ class App extends React.Component {
       users: {},
       followers: []
     };
+
+    this.colorArr = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"]
   }
 
 
@@ -88,20 +90,24 @@ class App extends React.Component {
           </div>
         </div>
 
-
         <div>
           <h1>Followers</h1>
-          <ul>
-            {this.state.followers.map(follower => (
-              <li>{follower.login}</li>
+          <div class="ui four cards">
+            {this.state.followers.map((follower, index) => (
+              this.color = `${this.colorArr[index]} card` ,
+              <a class={this.color}>
+                <div class="image">
+                  <img src={follower.avatar_url} />
+                  <p>{follower.login}</p>
+                </div>
+              </a>
             ))}
-          </ul>
+          </div>
         </div>
 
       </div>
     );
   }
-
 }
 
 export default App;
