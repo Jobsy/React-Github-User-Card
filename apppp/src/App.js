@@ -1,9 +1,27 @@
 import React from 'react';
 import axios from "axios"
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Card, Icon, Button, Header, Image, Modal } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 // import logo from './logo.svg';
 // import './App.css';
+
+
+// ModalModalExample = () => (
+//   <Modal trigger={<Button>Show Modal</Button>}>
+//     <Modal.Header>Select a Photo</Modal.Header>
+//     <Modal.Content image>
+//       <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
+//       <Modal.Description>
+//         <Header>Default Profile Image</Header>
+//         <p>
+//           We've found the following gravatar image associated with your e-mail
+//           address.
+//         </p>
+//         <p>Is it okay to use this photo?</p>
+//       </Modal.Description>
+//     </Modal.Content>
+//   </Modal>
+// )
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +33,22 @@ class App extends React.Component {
 
     this.colorArr = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"]
   }
-
+  modalModalExample = () => (
+    <Modal trigger={<Button>Show Modal</Button>}>
+      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Content image>
+        <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
+        <Modal.Description>
+          <Header>Default Profile Image</Header>
+          <p>
+            We've found the following gravatar image associated with your e-mail
+            address.
+          </p>
+          <p>Is it okay to use this photo?</p>
+        </Modal.Description>
+      </Modal.Content>
+    </Modal>
+  )
 
   componentDidMount() {
     axios.get("https://api.github.com/users/Jobsy").then(response => {
@@ -94,17 +127,30 @@ class App extends React.Component {
           <h1>Followers</h1>
           <div class="ui four cards">
             {this.state.followers.map((follower, index) => (
-              this.color = `${this.colorArr[index]} card` ,
+              this.color = `${this.colorArr[index]} card`,
               <a class={this.color}>
                 <div class="image">
                   <img src={follower.avatar_url} />
                   <p>{follower.login}</p>
                 </div>
+                <Modal trigger={<Button>Show Modal</Button>}>
+                  <Modal.Header>Select a Photo</Modal.Header>
+                  <Modal.Content image>
+                    <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
+                    <Modal.Description>
+                      <Header>Default Profile Image</Header>
+                      <p>
+                        We've found the following gravatar image associated with your e-mail
+                        address.
+        </p>
+                      <p>Is it okay to use this photo?</p>
+                    </Modal.Description>
+                  </Modal.Content>
+                </Modal>
               </a>
             ))}
           </div>
         </div>
-
       </div>
     );
   }
