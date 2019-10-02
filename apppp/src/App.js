@@ -11,6 +11,20 @@ class App extends React.Component {
     };
   }
 
+
+  componentDidMount() {
+    axios.get("https://api.github.com/users/Jobsy").then(response => {
+      console.log("LLL: ", response);
+      this.setState({ users: response.data });
+    });
+
+    axios.get("https://api.github.com/users/Jobsy/followers").then(response => {
+      console.log("fff: ", response.data);
+      this.setState({ followers: response.data });
+    });
+  }
+
+
   render() {
     return (
       <div>
