@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from "axios"
+import { Card, Icon, Image } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -42,7 +44,7 @@ class App extends React.Component {
           </ul>
         </div>  */}
 
-<div class="ui card">
+        <div class="ui card">
           <div class="ui slide masked reveal image">
             <img
               src={this.state.users.avatar_url}
@@ -72,7 +74,7 @@ class App extends React.Component {
             <a href={this.state.users.html_url} class="header">
               {this.state.users.name}
             </a>
-                       <span class="meta date">{this.state.users.login}</span>
+            <span class="meta date">{this.state.users.login}</span>
             <div class="meta right floated">
               <span class="date">{this.state.users.location}</span>
             </div>
