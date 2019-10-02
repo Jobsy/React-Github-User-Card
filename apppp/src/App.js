@@ -133,17 +133,16 @@ class App extends React.Component {
                   <img src={follower.avatar_url} />
                   <p>{follower.login}</p>
                 </div>
-                <Modal trigger={<Button>Show Modal</Button>}>
-                  <Modal.Header>Select a Photo</Modal.Header>
+                <Modal trigger={<Button>Show Details</Button>}>
+                  <Modal.Header>{follower.login}</Modal.Header>
                   <Modal.Content image>
-                    <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
+                    <Image wrapped size='medium' src={follower.avatar_url} />
                     <Modal.Description>
-                      <Header>Default Profile Image</Header>
+                      <Header>{follower.login} Default Profile</Header>
                       <p>
-                        We've found the following gravatar image associated with your e-mail
-                        address.
+                        Follow this <a href={follower.html_url}>link</a> to checkout {follower.login} main page
         </p>
-                      <p>Is it okay to use this photo?</p>
+                      <p>Or click this <a href={follower.organizations_url}>link</a> to view current organisation</p>
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
