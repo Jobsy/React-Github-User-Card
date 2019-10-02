@@ -3,6 +3,7 @@ import axios from "axios"
 import { Card, Icon, Button, Header, Image, Modal } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import Users from './components/Users';
+import Followers from './components/Followers';
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -14,7 +15,7 @@ class App extends React.Component {
       followers: []
     };
 
-    this.colorArr = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"]
+    // this.colorArr = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"]
   }
 
 
@@ -83,7 +84,8 @@ class App extends React.Component {
 
         <div>
           <h1>Followers</h1>
-          <div class="ui four cards">
+          <Followers followersProps={this.state.followers}/>
+          {/* <div class="ui four cards">
             {this.state.followers.map((follower, index) => (
               this.color = `${this.colorArr[index]} card`,
               <a class={this.color}>
@@ -107,7 +109,7 @@ class App extends React.Component {
                 </Modal>
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     );
