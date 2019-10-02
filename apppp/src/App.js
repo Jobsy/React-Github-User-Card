@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello World</h1>
-        <div>
+        {/* <div>
           <h1>User</h1>
           <ul>
             {this.state.users.name}
@@ -40,7 +40,52 @@ class App extends React.Component {
             {this.state.users.repos_url}
             {this.state.users.followers}
           </ul>
-        </div> 
+        </div>  */}
+
+<div class="ui card">
+          <div class="ui slide masked reveal image">
+            <img
+              src={this.state.users.avatar_url}
+              class="visible content"
+              alt=""
+            />
+            <div class="hidden content">
+              <h3>Other Info:</h3>
+              <ul>
+                <li>
+                  <a href={this.state.users.gist_url}>Gists</a>
+                </li>
+                <li>
+                  <a href={this.state.users.oganizations_url}>Oganizations</a>
+                </li>
+                <li>
+                  <a href={this.state.users.repos_url}>Repos</a>
+                </li>
+                <li>
+                  <a href={this.state.users.followers_url}>Followers</a>
+                </li>
+              </ul>
+              <span>Last Upadted Date: {this.state.users.updated_at}</span>
+            </div>
+          </div>
+          <div class="content">
+            <a href={this.state.users.html_url} class="header">
+              {this.state.users.name}
+            </a>
+                       <span class="meta date">{this.state.users.login}</span>
+            <div class="meta right floated">
+              <span class="date">{this.state.users.location}</span>
+            </div>
+          </div>
+          <div class="extra content">
+            <span>{this.state.users.public_repos} Repos</span>
+            <a class="right floated">
+              <i class="users" />
+              {this.state.users.followers} followers
+            </a>
+          </div>
+        </div>
+
       </div>
     );
   }
