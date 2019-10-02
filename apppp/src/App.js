@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios"
+import { Route, BrowserRouter } from 'react-router-dom';
 
 import Users from './components/Users';
 import Followers from './components/Followers';
@@ -36,10 +37,16 @@ class App extends React.Component {
           <h1>GitHub User Card</h1>
           <Users usersProps={this.state.users} />
         </div>
-
+       
         <div>
           <h1>Followers</h1>
           <Followers followersProps={this.state.followers} />
+        </div>
+        <div>
+          {/* <BrowserRouter> 
+        <Route exact path="/followers" render={() => <Followers followersProps={this.state.followers} />} />
+          </BrowserRouter> */}
+          
         </div>
       </div>
     );
