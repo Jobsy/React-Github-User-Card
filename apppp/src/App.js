@@ -30,6 +30,17 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello World</h1>
+        <div>
+          <h1>User</h1>
+          <ul>
+            {this.state.users.name}
+            {this.state.users.avatar_url}
+            {this.state.users.followers_url}
+            {this.state.users.location}
+            {this.state.users.repos_url}
+            {this.state.users.followers}
+          </ul>
+        </div> 
       </div>
     );
   }
