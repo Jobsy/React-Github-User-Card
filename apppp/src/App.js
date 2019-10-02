@@ -2,12 +2,13 @@ import React from 'react';
 import axios from "axios"
 import { Card, Icon, Button, Header, Image, Modal } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import Users from './components/Users';
 // import logo from './logo.svg';
 // import './App.css';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       users: {},
       followers: []
@@ -34,7 +35,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>GitHub User Card</h1>
-        <div class="ui card">
+        <Users usersProps={this.state.users} />
+        {/* <div class="ui card">
           <div class="ui slide masked reveal image">
             <img
               src={this.state.users.avatar_url}
@@ -48,7 +50,7 @@ class App extends React.Component {
                   <a href={this.state.users.gist_url}>Gists</a>
                 </li>
                 <li>
-                  <a href={this.state.users.oganizations_url}>Oganizations</a>
+                  <a href={this.state.users.organizations_url}>Oganizations</a>
                 </li>
                 <li>
                   <a href={this.state.users.repos_url}>Repos</a>
@@ -76,7 +78,8 @@ class App extends React.Component {
               {this.state.users.followers} followers
             </a>
           </div>
-        </div>
+        </div> */}
+
 
         <div>
           <h1>Followers</h1>
