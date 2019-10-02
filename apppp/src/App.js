@@ -5,24 +5,6 @@ import "semantic-ui-css/semantic.min.css";
 // import logo from './logo.svg';
 // import './App.css';
 
-
-// ModalModalExample = () => (
-//   <Modal trigger={<Button>Show Modal</Button>}>
-//     <Modal.Header>Select a Photo</Modal.Header>
-//     <Modal.Content image>
-//       <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
-//       <Modal.Description>
-//         <Header>Default Profile Image</Header>
-//         <p>
-//           We've found the following gravatar image associated with your e-mail
-//           address.
-//         </p>
-//         <p>Is it okay to use this photo?</p>
-//       </Modal.Description>
-//     </Modal.Content>
-//   </Modal>
-// )
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,22 +15,7 @@ class App extends React.Component {
 
     this.colorArr = ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"]
   }
-  modalModalExample = () => (
-    <Modal trigger={<Button>Show Modal</Button>}>
-      <Modal.Header>Select a Photo</Modal.Header>
-      <Modal.Content image>
-        <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
-        <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
-          <p>Is it okay to use this photo?</p>
-        </Modal.Description>
-      </Modal.Content>
-    </Modal>
-  )
+
 
   componentDidMount() {
     axios.get("https://api.github.com/users/Jobsy").then(response => {
@@ -66,19 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
-        {/* <div>
-          <h1>User</h1>
-          <ul>
-            {this.state.users.name}
-            {this.state.users.avatar_url}
-            {this.state.users.followers_url}
-            {this.state.users.location}
-            {this.state.users.repos_url}
-            {this.state.users.followers}
-          </ul>
-        </div>  */}
-
+        <h1>GitHub User Card</h1>
         <div class="ui card">
           <div class="ui slide masked reveal image">
             <img
@@ -133,6 +88,7 @@ class App extends React.Component {
                   <img src={follower.avatar_url} />
                   <p>{follower.login}</p>
                 </div>
+
                 <Modal trigger={<Button>Show Details</Button>}>
                   <Modal.Header>{follower.login}</Modal.Header>
                   <Modal.Content image>
